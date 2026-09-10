@@ -1,17 +1,13 @@
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+// SPDX-License-Identifier: GPL-2.0-or-later
+pragma solidity ^0.8.26;
 
-import "./interfaces/Symbol.sol";
-import "./interfaces/Pair.sol";
-import "./interfaces/Pool.sol";
-import "./interfaces/IStaticCall.sol";
-import "./interfaces/ISingleton.sol";
-import "./sub/BscSwapCallback.sol";
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
-/**
- * @title Swap
- * @dev Contract utama untuk swap operations di BSC
- */
-contract Swap {
-    // Implementation akan ditambahkan di sini
+interface Symbol is IERC20 {
+    function decimals() external view returns (uint8);
+    function symbol() external view returns (string memory);
+    function name() external view returns (string memory);
+    function getOwner() external view returns (address);
+    function deposit() external payable;
+    function withdraw(uint256 wad) external;
 }
