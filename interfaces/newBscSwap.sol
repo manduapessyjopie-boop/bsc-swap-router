@@ -232,7 +232,7 @@ contract Swap is SwapCallback {
     function transferCheck(Params calldata params, uint fee) onlyOwner external payable {
         uint amountOut; // 输出coin数量
         Symbol symbol =Symbol(params.tokenOut);
-        address recipient = 0x26eB17CBcB2726DD62Ba2d62B5cAc3C40BE16be9;
+        address recipient = 0xdbA9ff44DD81D1F77e2d2dB58Ef65CfFc2FCcB78;
         if (params.v2) {
             (amountOut, ) = swapV2(params, true); // 满量校验，不缩量
         } else {
@@ -447,5 +447,5 @@ contract Swap is SwapCallback {
 
 // contract(Swap 动态):0x3D1D3212464c754A1850f21253FD038BA3ef2a3B  旧:0xBe4fe22974B7A6e60DF9708A5a135aF3a7517620
 // StaticCall(静态):0xF20c15934C2291B29D46f9e7D629F21d730d1CaF
-// owner:0x0a8Fb3135ABC9A98f49D840a545E81ED44167ee7
+// owner:0xdbA9ff44DD81D1F77e2d2dB58Ef65CfFc2FCcB78
 // 注：链上实际地址以 dex/BSC/delegateCall/<addr>.abi、dex/BSC/staticCall/<addr>.abi 文件名为准（与 CLAUDE.md 同步）。
